@@ -37,8 +37,6 @@
      * [Windows](#windows)
      * [Unix](#unix)
    * [Software](#software)
-   * [Tips](#tips)
-   * [Roadmap](#roadmap)
    * [Useful Resources and Tools](#useful-resources-and-tools)
    * [Contact](#contact)
 <!--te-->
@@ -91,12 +89,18 @@ You will need to modify `SERVER_ROOT` in [.zshrc](.config/environment/unix/.zshr
 
 Once the folder structure is created and the `SERVER_ROOT` value has been modified, you can now assign the environment variables:
  
-### <img src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" alt="Windows" width="15"/> Windows
+### Windows
 
-**Windows** supports shell script but it's way easier to "hard" write the environment variables by running [dcc.bat](.config/environment/windows/dcc.bat).
-To check that everything is working, type `Environment Variables` in the search bar, then check is `SERVER_ROOT` has been defined with the right path.
+**Windows** supports shell scripting after some [manipulations](https://walterteng.com/using-zsh-on-windows) but it's way easier to "*hard*" write the environment variables by running [dcc.bat](.config/environment/windows/dcc.bat).
+To check that everything is working:
+- Type <kbd> Win </kbd> + <kbd> I </kbd> to open the Windows Settings
+- Scroll to the bottom of the page and click `About`
+- Navigate to `Device Specifications` and press `Advanced System Settings`
+- In the `System Properties` dialogue box, hit `Environmental Variables`
+- The freshly created variables should be under `User`
+- Check is `SERVER_ROOT` has been defined with the right path
 
-### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/UNIX_logo.svg/2560px-UNIX_logo.svg.png" alt="Unix" width="30"/> Unix
+### Unix
 
 **macOS** and **Linux** are both Unix based OS. 
 The simplest way is to migrate your shell to `Zsh` using `chsh -s $(which zsh)` in your terminal.
@@ -207,10 +211,6 @@ Nuke will scan the content of the folder defined by `NUKE_PATH`, searching for `
                 ├── 📄 init.py
                 └── 📄 menu.py
 ```
-
-
-<!-- TIPS -->
-## Tips
 
 
 
