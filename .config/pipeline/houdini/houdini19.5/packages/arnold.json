@@ -1,0 +1,64 @@
+{
+    "env": [
+        {
+            "HTOA_STARTUP_LOG": 1
+        },
+        {
+            "HTOA_VERSION": [
+                {
+                    "houdini_version == '19.5'": "htoa-6.1.4.1"
+                }
+            ]
+        },
+        {
+            "LENTIL_VERSION": "2.5"
+        },
+        {
+            "ARNOLD_PLUGIN_PATH": [
+                "$PIPELINE_ROOT/other/osl_shaders/3ds_max_shipping",
+                "$PIPELINE_ROOT/other/osl_shaders/osl/experimental",
+                "$PIPELINE_ROOT/other/osl_shaders/osl/stable",
+                "$PIPELINE_ROOT/other/osl_shaders/osl/user_submitted",
+                "$PIPELINE_ROOT/houdini/plugins/lentil_${LENTIL_VERSION}/bin"
+            ]
+        },
+        {
+            "MTOA_TEMPLATES_PATH": [
+                {
+                    "houdini_os == 'windows'": "$PIPELINE_ROOT/houdini/plugins/lentil_${LENTIL_VERSION}/windows/ae"
+                },
+                {
+                    "houdini_os == 'linux'": "$PIPELINE_ROOT/houdini/plugins/lentil_${LENTIL_VERSION}/linux/ae"
+                },
+                {
+                    "houdini_os == 'macos'": "$PIPELINE_ROOT/houdini/plugins/lentil_${LENTIL_VERSION}/macOS/ae"
+                }
+            ]
+        },
+        {
+            "PATH": [
+                {
+                    "houdini_os == 'windows'": "C:/Users/$USERNAME/htoa/${HTOA_VERSION}_houdini-$HOUDINI_VERSION/${HTOA_VERSION}_houdini-$HOUDINI_VERSION/scripts/bin"
+                },
+                {
+                    "houdini_os == 'linux'": "$HOME/htoa/${HTOA_VERSION}_houdini-$HOUDINI_VERSION/${HTOA_VERSION}_houdini-$HOUDINI_VERSION/scripts/bin"
+                },
+                {
+                    "houdini_os == 'macos'": "$HOME/htoa/${HTOA_VERSION}_houdini-$HOUDINI_VERSION/${HTOA_VERSION}_houdini-$HOUDINI_VERSION/scripts/bin"
+                }
+            ]
+        }
+    ],
+    "path": [
+        {
+            "houdini_os == 'windows'": "C:/Users/$USERNAME/htoa/${HTOA_VERSION}_houdini-$HOUDINI_VERSION/${HTOA_VERSION}_houdini-$HOUDINI_VERSION"
+        },
+        {
+            "houdini_os == 'linux'": "$HOME/htoa/${HTOA_VERSION}_houdini-$HOUDINI_VERSION/${HTOA_VERSION}_houdini-$HOUDINI_VERSION"
+        },
+        {
+            "houdini_os == 'macos'": "$HOME/htoa/${HTOA_VERSION}_houdini-$HOUDINI_VERSION/${HTOA_VERSION}_houdini-$HOUDINI_VERSION"
+        }
+    ],
+    "method": "append"
+}
