@@ -145,6 +145,9 @@ To access it quickly, we also defined an alias for `houdini`, `hou` and `h` poin
         └── 📁 pipeline/
             └── 📁 maya/
                 └── 📁 2023/
+                    ├── 📄 Maya.env
+                    ├── 📁 prefs
+                    ├── 📁 presets
                     └── 📁 scripts
 ```
 
