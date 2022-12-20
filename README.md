@@ -201,6 +201,8 @@ Nuke will scan the content of the folder defined by `NUKE_PATH`, searching for `
 
 > See [What are the init.py and menu.py files](https://support.foundry.com/hc/en-us/articles/360003811839-Q100490-What-are-the-init-py-and-menu-py-files)
 
+You can find an [init.py](.config/pipeline/nuke/init.py) file example, showing how to load plugins on Nuke startup.
+
 ``` bash
 .
 └── 📁 $SERVER_ROOT/
