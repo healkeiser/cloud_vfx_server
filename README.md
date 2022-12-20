@@ -94,17 +94,18 @@ Once the folder structure is created and the `SERVER_ROOT` value has been modifi
 ### <img src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" alt="Windows" width="15"/> Windows
 
 Windows supports shell script but it's way easier to "hard" write the environment variables by running [dcc.bat](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/windows/dcc.bat).
+To check that everything is working, type `Environment Variables` in the search bar, then check is `SERVER_ROOT` has been defined with the right path.
 
 ### <img src="https://1000marcas.net/wp-content/uploads/2020/01/Unix-Logo.png" alt="Unix" width="20"/> Unix
 
 macOS and Linux are both Unix based OS. 
 The simplest way is to migrate your shell to `Zsh` using `chsh -s $(which zsh)` in your terminal.
 You can then symlink [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/unix/.zshrc) in your `$HOME` folder.
+To check that everything is working, restart your terminal and type `echo $SERVER_ROOT`: it should output your mounted Cloud server path.
 
 > [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/unix/.zshrc) needs to be called exactly that way in `$HOME` to be picked up by the terminal: remove any `alias` or `symlink` added in the name.
 
 > The `Make Alias` command in macOS Finder won't work properly. You should use this service instead to create proper Symlinks: [Symbolic Linker](https://github.com/nickzman/symboliclinker/releases)
-
 
 
 
@@ -130,9 +131,31 @@ This setup automatically links the following DCCs, using this folder structure:
 
 *WIP*
 
+``` bash
+.
+└── 📁 $SERVER_ROOT/
+    └── 📁 .config/
+        ├── 📁 environment
+        └── 📁 pipeline/
+            └── 📁 maya/
+                └── 📁 2023/
+                    └── 📁 scripts
+```
+
 ### <img src="https://cdn.worldvectorlogo.com/logos/substance-painter.svg" alt="Substance" width="15"/> Substance Painter
 
 *WIP*
+
+``` bash
+.
+└── 📁 $SERVER_ROOT/
+    └── 📁 .config/
+        ├── 📁 environment
+        └── 📁 pipeline/
+            └── 📁 substance_painter/
+                └── 📁 python/
+                    └── 📄 plugin.py
+```
 
 ### <img src="https://secure.meetupstatic.com/photos/event/b/9/f/6/600_494327606.jpeg" alt="Houdini" width="15"/> Houdini
 
