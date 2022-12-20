@@ -20,7 +20,7 @@ while true; do
             ;;
 
         Windows)
-            houdini_dir="" # TODO: ------ Add Windows path
+            houdini_dir="C:\Program Files\Side Effects Software\Houdini 19.5.<houdini minor version>"
             ;;
         *) ;;
         esac
