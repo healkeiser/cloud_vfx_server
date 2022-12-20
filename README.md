@@ -81,11 +81,9 @@ Which equals to:
         └── 📁 $PIPELINE_ROOT
 ```
 
-You will need to modify `SERVER_ROOT` in [.zshrc](.config/environment/unix/.zshrc) and/or [dcc.bat](.config/environment/windows/dcc.bat) by your mounted Cloud server path.
-
-> in [.zshrc](.config/environment/unix/.zshrc): `export SERVER_ROOT="Path/to/drive/linux"` (Line 12, 17, 21)
-
-> in [dcc.bat](.config/environment/windows/dcc.bat): `setx SERVER_ROOT "Path\to\drive\windows"` (Line 9)
+You will need to modify `SERVER_ROOT` in [.zshrc](.config/environment/unix/.zshrc) and/or [dcc.bat](.config/environment/windows/dcc.bat) by your mounted Cloud server path:
+- In [.zshrc](.config/environment/unix/.zshrc): `export SERVER_ROOT="Path/to/drive/linux"` (Line 12, 17, 21)
+- In [dcc.bat](.config/environment/windows/dcc.bat): `setx SERVER_ROOT "Path\to\drive\windows"` (Line 9)
 
 Once the folder structure is created and the `SERVER_ROOT` value has been modified, you can now assign the environment variables:
  
@@ -107,8 +105,10 @@ The simplest way is to migrate your shell to `Zsh` using `chsh -s $(which zsh)` 
 You can then symlink [.zshrc](.config/environment/unix/.zshrc) in your `$HOME` folder.
 To check that everything is working, restart your terminal and type `echo $SERVER_ROOT`: it should output your mounted Cloud server path.
 
+> **Warning**<br>
 > [.zshrc](.config/environment/unix/.zshrc) needs to be called exactly that way in `$HOME` to be picked up by the terminal: remove any `alias` or `symlink` added in the name.
 
+> **Warning**<br>
 > The `Make Alias` command in macOS Finder won't work properly. You should use this service instead to create proper Symlinks: [Symbolic Linker](https://github.com/nickzman/symboliclinker/releases)
 
 
@@ -176,6 +176,7 @@ To access it quickly, we also defined an alias for `houdini`, `hou` and `h` poin
 
 Houdini will automatically scan the folder defined by `$HSITE` for any folder being named `houdini<houdini version>/<recognized folder>` such as `otls` or `packages` and load the content of those folders at Houdini startup.
 
+> **Note**<br>
 > See [Configuring Houdini](https://www.sidefx.com/docs/houdini/basics/config.html#path)
 
 You can find two package file examples:
@@ -203,6 +204,7 @@ Both taking advantage of the environment variables posteriorly defined.
 
 Nuke will scan the content of the folder defined by `NUKE_PATH`, searching for `init.py` and `menu.py`.
 
+> **Note**<br>
 > See [What are the init.py and menu.py files](https://support.foundry.com/hc/en-us/articles/360003811839-Q100490-What-are-the-init-py-and-menu-py-files)
 
 You can find an [init.py](.config/pipeline/nuke/init.py) file example, showing how to load plugins on Nuke startup.
