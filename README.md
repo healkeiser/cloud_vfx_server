@@ -34,7 +34,7 @@
 <!--ts-->
    * [About](#about)
    * [Setup Server](#setup)
-     * [Windows](#Windows)
+     * [Windows](wWindows)
      * [Unix](#unix)
    * [Software](#software)
    * [Tips](#tips)
@@ -61,14 +61,23 @@ The setup is pretty straigthforward and only relies on environment variables:
  - `ENVIRONMENT_ROOT`: the `.config/environment` folder
  - `PIPELINE_ROOT`: the `.config/pipeline` folder
 
+You will need to modify `SERVER_ROOT` in [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/unix/.zshrc) and/or [dcc.bat](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/windows/dcc.bat) by your mounted Cloud server path.
+
+> in [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/unix/.zshrc): `export SERVER_ROOT="Path/to/drive/linux"` (Line 12, 17, 21)
+
+> in [dcc.bat](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/windows/dcc.bat): `setx SERVER_ROOT "Path\to\drive\windows"` (Line 9)
+
 ### <img src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" alt="Windows" width="15"/> Windows
 
-*WIP*
+Windows support shell script but it's way easier to "hard" write the environment variables by running [dcc.bat](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/windows/dcc.bat).
 
 ### <img src="https://1000marcas.net/wp-content/uploads/2020/01/Unix-Logo.png" alt="Unix" width="20"/> Unix
 
 macOS and Linux are both Unix based OS. 
-In order to unify the shell scripts, we'll be using [Zsh](https://www.zsh.org/) as the main shell language on both OS.
+The simplest way is to migrate your shell to `Zsh` using `chsh -s $(which zsh)` in your terminal.
+You can then symlink [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/unix/.zshrc) in your `$HOME` folder.
+
+> [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/unix/.zshrc) needs to be called exactly that way in `$HOME` to be picked up by the terminal: remove any `alias` or `symlink` added in the name.
 
 
 
