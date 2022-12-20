@@ -93,12 +93,12 @@ Once the folder structure is created and the `SERVER_ROOT` value has been modifi
  
 ### <img src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" alt="Windows" width="15"/> Windows
 
-Windows supports shell script but it's way easier to "hard" write the environment variables by running [dcc.bat](.config/environment/windows/dcc.bat).
+**Windows** supports shell script but it's way easier to "hard" write the environment variables by running [dcc.bat](.config/environment/windows/dcc.bat).
 To check that everything is working, type `Environment Variables` in the search bar, then check is `SERVER_ROOT` has been defined with the right path.
 
 ### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/UNIX_logo.svg/2560px-UNIX_logo.svg.png" alt="Unix" width="30"/> Unix
 
-macOS and Linux are both Unix based OS. 
+**macOS** and **Linux** are both Unix based OS. 
 The simplest way is to migrate your shell to `Zsh` using `chsh -s $(which zsh)` in your terminal.
 You can then symlink [.zshrc](.config/environment/unix/.zshrc) in your `$HOME` folder.
 To check that everything is working, restart your terminal and type `echo $SERVER_ROOT`: it should output your mounted Cloud server path.
@@ -127,9 +127,11 @@ This setup automatically links the following DCCs, using this folder structure:
                 └── 📁 python            ──> Using $SUBSTANCE_PAINTER_PLUGINS_PATH
 ```
 
-The DDCs can be launched normally on Windows if the [dcc.bat](.config/environment/windows/dcc.bat) file has been used to define the environment variables. 
+The DDCs can be launched normally on **Windows** if the [dcc.bat](.config/environment/windows/dcc.bat) file has been used to define the environment variables. 
 
-For macOS and Linux, you should start them from a terminal, in order to inherit the environment variables defined by [.zshrc](.config/environment/unix/.zshrc). You can find an example script for Houdini just here: [houdini.sh](.config/environment/unix/houdini.sh).
+For **macOS** and **Linux**, you should start them from a terminal, in order to inherit the environment variables defined by [.zshrc](.config/environment/unix/.zshrc). 
+
+You can find an example script for Houdini just here: [houdini.sh](.config/environment/unix/houdini.sh).
 
 To access it quickly, we also defined an alias for `houdini`, `hou` and `h` pointing to that script in [aliases.sh](.config/environment/unix/aliases.sh). It will allow you to simply type one of those tree commands to launch Houdini.
 
@@ -171,6 +173,8 @@ To access it quickly, we also defined an alias for `houdini`, `hou` and `h` poin
 Houdini will automatically scan the folder defined by `$HSITE` for any folder being named `houdini<houdini version>/<recognized folder>` such as `otls` or `packages` and load the content of those folders at Houdini startup.
 
 > See [Configuring Houdini](https://www.sidefx.com/docs/houdini/basics/config.html#path)
+
+You can find an package example for arnold in [arnold.json](.config/pipeline/houdini/houdini19.5/packages/arnold.json), taking advantage of the environment variables posteriorly defined.
 
 ``` bash
 .
