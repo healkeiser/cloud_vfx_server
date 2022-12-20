@@ -34,8 +34,7 @@
    * [About](#about)
    * [Setup Server](#setup)
      * [Windows](#Windows)
-     * [macOS](#macOS)
-     * [Linux](#linux)
+     * [Unix](#unix)
    * [Software](#software)
    * [Tips](#tips)
    * [Roadmap](#roadmap)
@@ -48,46 +47,58 @@
 <!-- ABOUT -->
 ## About
 Quick tutorial to setup a Cloud Server for multiple machines access, and VFX Pipeline on Windows, macOS and Linux.
+This repository is based on [Google Drive VFX Server](https://github.com/healkeiser/google_drive_vfx_server), with loads of improvments.
 
 
 
 <!-- SETUP SERVER -->
 ## Setup Server
 
+The setup is pretty straigthforward and only relies on environment variables:
+ - `SERVER_ROOT`: The root of the mounted Cloud drive
+ - `CONFIG_ROOT`: The `.config` folder
+ - `ENVIRONMENT_ROOT`: the `.config/environment` folder
+ - `PIPELINE_ROOT`: the `.config/pipeline` folder
+
 ### <img src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" alt="Windows" width="15"/> Windows
 
-### <img src="https://cdn.worldvectorlogo.com/logos/apple.svg" alt="macOS" width="15"/> macOS
+*WIP*
 
-### <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" width="15"/> Linux
+### <img src="https://1000marcas.net/wp-content/uploads/2020/01/Unix-Logo.png" alt="Unix" width="20"/> Unix
+
+macOS and Linux are both Unix based OS. 
+In order to unify the shell scripts, we'll be using [Zsh](https://www.zsh.org/) as the main shell language on both OS.
+
 
 
 
 <!-- SOFTWARE -->
 ## Software
 
-### <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" alt="Python" width="15"/> Python
-
 ### <img src="https://cdn.worldvectorlogo.com/logos/maya-2017.svg" alt="Maya" width="15"/> Maya
+
+*WIP*
 
 ### <img src="https://cdn.worldvectorlogo.com/logos/substance-painter.svg" alt="Substance" width="15"/> Substance Painter
 
+*WIP*
+
 ### <img src="https://secure.meetupstatic.com/photos/event/b/9/f/6/600_494327606.jpeg" alt="Houdini" width="15"/> Houdini
+
+*WIP*
 
 ### <img src="https://www.foundry.com/sites/default/files/2021-03/ICON_NUKE-rgb-yellow-01.png" alt="Nuke" width="15"/> Nuke
 
+*WIP*
+
 ### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/512px-Adobe_After_Effects_CC_icon.svg.png" alt="After Effects" width="15"/> After Effects
+
+*WIP*
 
 
 
 <!-- TIPS -->
 ## Tips
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-- [ ] A
-- [x] B
 
 
 
