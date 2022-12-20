@@ -83,27 +83,27 @@ Which equals to:
         └── 📁 $PIPELINE_ROOT
 ```
 
-You will need to modify `SERVER_ROOT` in [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/unix/.zshrc) and/or [dcc.bat](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/windows/dcc.bat) by your mounted Cloud server path.
+You will need to modify `SERVER_ROOT` in [.zshrc](.config/environment/unix/.zshrc) and/or [dcc.bat](.config/environment/windows/dcc.bat) by your mounted Cloud server path.
 
-> in [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/unix/.zshrc): `export SERVER_ROOT="Path/to/drive/linux"` (Line 12, 17, 21)
+> in [.zshrc](.config/environment/unix/.zshrc): `export SERVER_ROOT="Path/to/drive/linux"` (Line 12, 17, 21)
 
-> in [dcc.bat](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/windows/dcc.bat): `setx SERVER_ROOT "Path\to\drive\windows"` (Line 9)
+> in [dcc.bat](.config/environment/windows/dcc.bat): `setx SERVER_ROOT "Path\to\drive\windows"` (Line 9)
 
 Once the folder structure is created and the `SERVER_ROOT` value has been modified, you can now assign the environment variables:
  
 ### <img src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" alt="Windows" width="15"/> Windows
 
-Windows supports shell script but it's way easier to "hard" write the environment variables by running [dcc.bat](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/windows/dcc.bat).
+Windows supports shell script but it's way easier to "hard" write the environment variables by running [dcc.bat](.config/environment/windows/dcc.bat).
 To check that everything is working, type `Environment Variables` in the search bar, then check is `SERVER_ROOT` has been defined with the right path.
 
 ### <img src="https://1000marcas.net/wp-content/uploads/2020/01/Unix-Logo.png" alt="Unix" width="20"/> Unix
 
 macOS and Linux are both Unix based OS. 
 The simplest way is to migrate your shell to `Zsh` using `chsh -s $(which zsh)` in your terminal.
-You can then symlink [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/unix/.zshrc) in your `$HOME` folder.
+You can then symlink [.zshrc](.config/environment/unix/.zshrc) in your `$HOME` folder.
 To check that everything is working, restart your terminal and type `echo $SERVER_ROOT`: it should output your mounted Cloud server path.
 
-> [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/unix/.zshrc) needs to be called exactly that way in `$HOME` to be picked up by the terminal: remove any `alias` or `symlink` added in the name.
+> [.zshrc](.config/environment/unix/.zshrc) needs to be called exactly that way in `$HOME` to be picked up by the terminal: remove any `alias` or `symlink` added in the name.
 
 > The `Make Alias` command in macOS Finder won't work properly. You should use this service instead to create proper Symlinks: [Symbolic Linker](https://github.com/nickzman/symboliclinker/releases)
 
@@ -126,6 +126,12 @@ This setup automatically links the following DCCs, using this folder structure:
             └── 📁 substance_painter     
                 └── 📁 python            ──> Using $SUBSTANCE_PAINTER_PLUGINS_PATH
 ```
+
+The DDCs can be launched normally on Windows if the [dcc.bat](.config/environment/windows/dcc.bat) file has been used to define the environment variables. 
+
+For macOS and Linux, you should start them from a terminal, in order to inherit the environment variables defined by [.zshrc](.config/environment/unix/.zshrc). You can find an example script for Houdini just here: [houdini.sh](.config/environment/unix/houdini.sh).
+
+To access it quickly, we also defined an alias for `houdini`, `hou` and `h` pointing to that script in [aliases.sh](.config/environment/unix/aliases.sh). It will allow you to simply type one of those tree commands to launch Houdini.
 
 ### <img src="https://cdn.worldvectorlogo.com/logos/maya-2017.svg" alt="Maya" width="15"/> Maya
 
