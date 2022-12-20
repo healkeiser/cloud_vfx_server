@@ -34,7 +34,7 @@
 <!--ts-->
    * [About](#about)
    * [Setup Server](#setup)
-     * [Windows](wWindows)
+     * [Windows](#windows)
      * [Unix](#unix)
    * [Software](#software)
    * [Tips](#tips)
