@@ -6,7 +6,7 @@
 
 :: ------ Cloud (used as a server equivalent)
 echo "Cloud - SERVER_ROOT:"
-setx SERVER_ROOT "Z:\My Drive"
+setx SERVER_ROOT "Path\to\drive\windows"
 echo %SERVER_ROOT%
 echo.
 
