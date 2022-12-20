@@ -178,7 +178,11 @@ Houdini will automatically scan the folder defined by `$HSITE` for any folder be
 
 > See [Configuring Houdini](https://www.sidefx.com/docs/houdini/basics/config.html#path)
 
-You can find a package file example for arnold in [arnold.json](.config/pipeline/houdini/houdini19.5/packages/arnold.json), taking advantage of the environment variables posteriorly defined.
+You can find two package file examples:
+- A generic [plugin_name.json](.config/pipeline/houdini/houdini19.5/packages/plugin_name.json)
+- An [arnold.json](.config/pipeline/houdini/houdini19.5/packages/arnold.json)
+
+Both taking advantage of the environment variables posteriorly defined.
 
 ``` bash
 .
