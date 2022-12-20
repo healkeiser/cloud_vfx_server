@@ -12,7 +12,9 @@ __email__ = "valentin.onze@gmail.com"
 
 def loadPlugins():
   nuke_path = os.getenv("NUKE_PATH")
-  nuke.pluginAddPath(os.path.join(nuke_path, "plugins/plugin_name"))
+  plugin_path = os.path.join(nuke_path, "plugins/plugin_name")
+  if os.path.isdir(plugin_path):
+    nuke.pluginAddPath(plugin_path)
 
 if __name__ == "__main__":
     loadPlugins()
