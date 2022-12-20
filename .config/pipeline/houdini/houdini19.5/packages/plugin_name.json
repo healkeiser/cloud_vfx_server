@@ -1,0 +1,8 @@
+{
+	"env": [
+		{
+			"PLUGIN_NAME": "$PIPELINE_ROOT/houdini/plugins/plugin_name"
+		}
+	],
+	"path": "$PLUGIN_NAME"
+}
