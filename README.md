@@ -48,18 +48,40 @@
 <!-- ABOUT -->
 ## About
 Quick tutorial to setup a Cloud Server for multiple machines access, and VFX Pipeline on Windows, macOS and Linux.
-This repository is based on [Google Drive VFX Server](https://github.com/healkeiser/google_drive_vfx_server), with loads of improvments.
+This repository is based on [Google Drive VFX Server](https://github.com/healkeiser/google_drive_vfx_server), with loads of improvements.
 
 
 
 <!-- SETUP SERVER -->
 ## Setup Server
 
-The setup is pretty straigthforward and only relies on environment variables:
- - `SERVER_ROOT`: The root of the mounted Cloud drive
+First, you'll need to mount your Cloud server on your system, using any software you like ([rclone](https://rclone.org/), [Google Drive File Stream](https://support.google.com/a/answer/7491144?hl=en), etc.)
+
+We can then start moving files around. The setup only relies on environment variables:
+ - `SERVER_ROOT`: The root of the mounted Cloud server. This is the only value that needs to be changed depending on your setup
  - `CONFIG_ROOT`: The `.config` folder
  - `ENVIRONMENT_ROOT`: the `.config/environment` folder
  - `PIPELINE_ROOT`: the `.config/pipeline` folder
+ 
+You can now download the code from this repository and extract its content to your `SERVER_ROOT`. Using `Z:/My Drive` as the mounted Cloud server path, it should look like this: 
+
+``` bash
+.
+└── 📁 Z:/My Drive/
+    └── 📁 .config/
+        ├── 📁 environment
+        └── 📁 pipeline
+```
+
+Which equals to:
+
+``` bash
+.
+└── 📁 $SERVER_ROOT/
+    └── 📁 $CONFIG_ROOT/
+        ├── 📁 $ENVIRONMENT_ROOT
+        └── 📁 $PIPELINE_ROOT
+```
 
 You will need to modify `SERVER_ROOT` in [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/unix/.zshrc) and/or [dcc.bat](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/windows/dcc.bat) by your mounted Cloud server path.
 
@@ -67,9 +89,11 @@ You will need to modify `SERVER_ROOT` in [.zshrc](https://github.com/healkeiser/
 
 > in [dcc.bat](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/windows/dcc.bat): `setx SERVER_ROOT "Path\to\drive\windows"` (Line 9)
 
+Once the folder structure is created and the `SERVER_ROOT` value has been modified, you can now assign the environment variables:
+ 
 ### <img src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" alt="Windows" width="15"/> Windows
 
-Windows support shell script but it's way easier to "hard" write the environment variables by running [dcc.bat](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/windows/dcc.bat).
+Windows supports shell script but it's way easier to "hard" write the environment variables by running [dcc.bat](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/windows/dcc.bat).
 
 ### <img src="https://1000marcas.net/wp-content/uploads/2020/01/Unix-Logo.png" alt="Unix" width="20"/> Unix
 
@@ -79,11 +103,28 @@ You can then symlink [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blo
 
 > [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blob/main/.config/environment/unix/.zshrc) needs to be called exactly that way in `$HOME` to be picked up by the terminal: remove any `alias` or `symlink` added in the name.
 
+> The `Make Alias` command in macOS Finder won't work properly. You should use this service instead to create proper Symlinks: [Symbolic Linker](https://github.com/nickzman/symboliclinker/releases)
+
 
 
 
 <!-- SOFTWARE -->
 ## Software
+This setup automatically links the following DCCs, using this folder structure:
+
+``` bash
+.
+└── 📁 $SERVER_ROOT/
+    └── 📁 .config/
+        ├── 📁 environment
+        └── 📁 pipeline/
+            ├── 📁 houdini               ──> Using $HSITE
+            ├── 📁 maya                  ──> Using $MAYA_APP_DIR
+            ├── 📁 nuke                  ──> Using $NUKE_PATH
+            ├── 📁 other   
+            └── 📁 substance_painter     
+                └── 📁 python            ──> Using $SUBSTANCE_PAINTER_PLUGINS_PATH
+```
 
 ### <img src="https://cdn.worldvectorlogo.com/logos/maya-2017.svg" alt="Maya" width="15"/> Maya
 
@@ -95,16 +136,41 @@ You can then symlink [.zshrc](https://github.com/healkeiser/cloud_vfx_server/blo
 
 ### <img src="https://secure.meetupstatic.com/photos/event/b/9/f/6/600_494327606.jpeg" alt="Houdini" width="15"/> Houdini
 
-*WIP*
+Houdini will automatically scan the folder defined by `$HSITE` for any folder being named `houdini<houdini version>/<recognized folder>` such as `otls` or `packages` and load the content of those folders at Houdini startup.
+
+> See [Configuring Houdini](https://www.sidefx.com/docs/houdini/basics/config.html#path)
+
+``` bash
+.
+└── 📁 $SERVER_ROOT/
+    └── 📁 .config/
+        ├── 📁 environment
+        └── 📁 pipeline/
+            └── 📁 houdini/
+                └── 📁 houdini19.5/
+                    ├── 📁 desktop
+                    ├── 📁 otls/
+                    │   └── 📄 digital_asset.hda
+                    └── 📁 packages/
+                        └── 📄 package.json
+```
 
 ### <img src="https://www.foundry.com/sites/default/files/2021-03/ICON_NUKE-rgb-yellow-01.png" alt="Nuke" width="15"/> Nuke
 
-*WIP*
+Nuke will scan the content of the folder defined by `NUKE_PATH`, searching for `init.py` and `menu.py`.
 
-### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/512px-Adobe_After_Effects_CC_icon.svg.png" alt="After Effects" width="15"/> After Effects
+> See [What are the init.py and menu.py files](https://support.foundry.com/hc/en-us/articles/360003811839-Q100490-What-are-the-init-py-and-menu-py-files)
 
-*WIP*
-
+``` bash
+.
+└── 📁 $SERVER_ROOT/
+    └── 📁 .config/
+        ├── 📁 environment
+        └── 📁 pipeline/
+            └── 📁 nuke/
+                ├── 📄 init.py
+                └── 📄 menu.py
+```
 
 
 <!-- TIPS -->
