@@ -25,6 +25,12 @@ setx PIPELINE_ROOT "%CONFIG_ROOT%\pipeline"
 echo  %PIPELINE_ROOT%
 echo.
 
+:: ------ Create $HOME for easier integration with Unix systems
+echo "Home - HOME:"
+setx HOME "C:\Users\%USERNAME%"
+echo  %HOME%
+echo.
+
 :: ------ Houdini
 echo "Houdini - HSITE:"
 setx HSITE "%PIPELINE_ROOT%\houdini"
