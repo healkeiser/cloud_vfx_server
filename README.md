@@ -244,3 +244,5 @@ Project Link: [Cloud VFX Server](https://github.com/healkeiser/cloud_vfx_server)
   <a href="https://www.instagram.com/val.beaumontart">
   <img src="https://img.shields.io/badge/-Instagram-85255b?style=for-the-badge&logo=instagram" alt="Instagram"/></a>  
 </p>
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/healkeiser)
