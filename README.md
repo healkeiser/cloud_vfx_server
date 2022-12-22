@@ -81,7 +81,7 @@ Which equals to:
         └── 📁 $PIPELINE_ROOT
 ```
 
-You will need to modify `SERVER_ROOT` in [.zshrc](.config/environment/unix/.zshrc) and/or [dcc.bat](.config/environment/windows/dcc.bat) by your mounted Cloud server path:
+You will need to modify `SERVER_ROOT` in [.zshrc](.config/environment/unix/.zshrc) (**Unix**) and/or [dcc.bat](.config/environment/windows/dcc.bat) (**Windows**) by your mounted Cloud server path:
 - In [.zshrc](.config/environment/unix/.zshrc): `export SERVER_ROOT="Path/to/drive/linux"` (Line 12, 17, 21)
 - In [dcc.bat](.config/environment/windows/dcc.bat): `setx SERVER_ROOT "Path\to\drive\windows"` (Line 9)
 
