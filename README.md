@@ -139,7 +139,7 @@ You can find an example script for Houdini just here: [houdini.sh](.config/envir
 
 To access it quickly, we also defined an alias for `houdini`, `hou` and `h` pointing to that script in [aliases.sh](.config/environment/unix/aliases.sh). It will allow you to simply type one of those tree commands to launch Houdini.
 
-### <img src="https://cdn.worldvectorlogo.com/logos/maya-2017.svg" alt="Maya" width="15"/> Maya
+### <img src="https://cdn.worldvectorlogo.com/logos/maya-2017.svg" alt="Maya" width="20"/> Maya
 
 *WIP*
 
@@ -157,7 +157,7 @@ To access it quickly, we also defined an alias for `houdini`, `hou` and `h` poin
                     └── 📁 scripts
 ```
 
-### <img src="https://cdn.worldvectorlogo.com/logos/substance-painter.svg" alt="Substance" width="15"/> Substance Painter
+### <img src="https://cdn.worldvectorlogo.com/logos/substance-painter.svg" alt="Substance" width="20"/> Substance Painter
 
 *WIP*
 
@@ -172,7 +172,7 @@ To access it quickly, we also defined an alias for `houdini`, `hou` and `h` poin
                     └── 📄 plugin.py
 ```
 
-### <img src="https://secure.meetupstatic.com/photos/event/b/9/f/6/600_494327606.jpeg" alt="Houdini" width="15"/> Houdini
+### <img src="https://secure.meetupstatic.com/photos/event/b/9/f/6/600_494327606.jpeg" alt="Houdini" width="20"/> Houdini
 
 Houdini will automatically scan the folder defined by `$HSITE` for any folder being named `houdini<houdini version>/<recognized folder>` such as `otls` or `packages` and load the content of those folders at Houdini startup.
 
@@ -200,7 +200,7 @@ Both taking advantage of the environment variables posteriorly defined.
                         └── 📄 package.json
 ```
 
-### <img src="https://www.foundry.com/sites/default/files/2021-03/ICON_NUKE-rgb-yellow-01.png" alt="Nuke" width="15"/> Nuke
+### <img src="https://www.foundry.com/sites/default/files/2021-03/ICON_NUKE-rgb-yellow-01.png" alt="Nuke" width="20"/> Nuke
 
 Nuke will scan the content of the folder defined by `NUKE_PATH`, searching for `init.py` and `menu.py`.
 
