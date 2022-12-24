@@ -23,7 +23,7 @@ Darwin) ###### MACOS ###########################################################
     alias current_os="echo 'macOS'"
 
     # ------ DCCs and VFX
-    alias {houdini, hou, h}='cd $ENVIRONMENT_ROOT/unix && sh ./houdini.sh'
+    alias houdini="cd $ENVIRONMENT_ROOT/unix && sh ./houdini.sh"
     ;;
 
 Windows) ###### WINDOWS ########################################################
