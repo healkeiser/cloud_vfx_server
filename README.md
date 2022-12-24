@@ -137,7 +137,7 @@ For **macOS** and **Linux**, you should start them from a terminal, in order to 
 
 You can find an example script for Houdini just here: [houdini.sh](.config/environment/unix/houdini.sh).
 
-To access it quickly, we also defined an alias for `houdini`, `hou` and `h` pointing to that script in [aliases.sh](.config/environment/unix/aliases.sh). It will allow you to simply type one of those tree commands to launch Houdini.
+To access it quickly, we also defined an alias for `houdini` pointing to that script in [aliases.sh](.config/environment/unix/aliases.sh). It will allow you to simply type one of those tree commands to launch Houdini.
 
 ### <img src="https://cdn.worldvectorlogo.com/logos/maya-2017.svg" alt="Maya" width="20"/> Maya
 
