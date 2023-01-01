@@ -142,6 +142,8 @@ To access it quickly, we also defined an alias for `houdini` pointing to that sc
 ### <img src="https://cdn.worldvectorlogo.com/logos/maya-2017.svg" alt="Maya" width="20"/> Maya
 
 *WIP*
+> **Note**<br>
+> See [Maya file path variables](https://help.autodesk.com/view/MAYAUL/2022/ENU/?guid=GUID-228CCA33-4AFE-4380-8C3D-18D23F7EAC72)
 
 ``` bash
 .
@@ -160,6 +162,8 @@ To access it quickly, we also defined an alias for `houdini` pointing to that sc
 ### <img src="https://cdn.worldvectorlogo.com/logos/substance-painter.svg" alt="Substance" width="20"/> Substance Painter
 
 *WIP*
+> **Note**<br>
+> See [Substance Painter environment variables](https://substance3d.adobe.com/documentation/spdoc/environment-variables-172823292.html)
 
 ``` bash
 .
