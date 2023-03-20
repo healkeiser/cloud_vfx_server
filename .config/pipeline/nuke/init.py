@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """Init script for Nuke."""
 
-# ------ Libraries
+# Libraries
 import os, nuke
 
-# ------ Metadatas
+# Metadatas
 __author__ = "Valentin Beaumont"
 __email__ = "valentin.onze@gmail.com"
 
