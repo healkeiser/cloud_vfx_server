@@ -47,7 +47,7 @@ powershell write-host -foregroundcolor Green "'    '-> Expanded: %SERVER_ROOT%\.
 
 :: Set application-specific variables
 echo.
-echo ===========================================================================
+echo ===================================
 echo.
 powershell write-host -foregroundcolor Red "SideFX Houdini"
 setx "HSITE" "%HSITE%"
@@ -55,7 +55,7 @@ powershell write-host -foregroundcolor Red "'  'HSITE: %HSITE%"
 powershell write-host -foregroundcolor Red "'    '-> Expanded: %SERVER_ROOT%\.config\pipeline\houdini"
 
 echo.
-echo ===========================================================================
+echo ===================================
 echo.
 powershell write-host -foregroundcolor White "Autodesk Maya"
 setx "MAYA_APP_DIR" "%MAYA_APP_DIR%"
@@ -63,7 +63,7 @@ powershell write-host -foregroundcolor Cyan "'  'MAYA_APP_DIR: %MAYA_APP_DIR%"
 powershell write-host -foregroundcolor Cyan "'    '-> Expanded: %SERVER_ROOT%\.config\pipeline\maya"
 
 echo.
-echo ===========================================================================
+echo ===================================
 echo.
 powershell write-host -foregroundcolor White "Foundry Nuke"
 setx "NUKE_PATH" "%NUKE_PATH%"
@@ -71,7 +71,7 @@ powershell write-host -foregroundcolor Yellow "'  'NUKE_PATH: %NUKE_PATH%"
 powershell write-host -foregroundcolor Yellow "'    '-> Expanded: %SERVER_ROOT%\.config\pipeline\nuke"
 
 echo.
-echo ===========================================================================
+echo ===================================
 echo.
 powershell write-host -foregroundcolor White "Adobe Substance Painter"
 setx "SUBSTANCE_PAINTER_PLUGINS_PATH" "%SUBSTANCE_PAINTER_PLUGINS_PATH%"
@@ -80,6 +80,6 @@ powershell write-host -foregroundcolor DarkGreen "'    '-> Expanded: %SERVER_ROO
 
 :: End
 echo.
-echo ===========================================================================
+echo ===================================
 echo.
 pause
