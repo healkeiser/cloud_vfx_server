@@ -7,6 +7,7 @@ setlocal
 
 :: Temporary values, only valid in this shell
 :: Set variables (use quotes around values with spaces)
+:: Double %% to avoid the expansion of the variable
 set "SERVER_ROOT=C:\Users\valen\OneDrive"
 set "CONFIG_ROOT=%%SERVER_ROOT%%\.config"
 set "ENVIRONMENT_ROOT=%%CONFIG_ROOT%%\environment"
@@ -20,6 +21,8 @@ set "SUBSTANCE_PAINTER_PLUGINS_PATH=%%PIPELINE_ROOT%%\substance_painter\python"
 :: Header
 echo.
 powershell write-host -foregroundcolor White "Cloud VFX Server"
+echo.
+echo Valentin Beaumont - valentin.onze@gmail.com
 echo https://github.com/healkeiser/cloud_vfx_server
 echo.
 echo ===========================================================================
