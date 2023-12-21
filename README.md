@@ -105,10 +105,10 @@ The simplest way is to migrate your shell to `Zsh` using `chsh -s $(which zsh)` 
 You can then symlink [.zshrc](.config/environment/unix/.zshrc) in your `$HOME` folder.
 To check that everything is working, restart your terminal and type `echo $SERVER_ROOT`: it should output your mounted Cloud server path.
 
-> **Warning**<br>
+> [!WARNING]  
 > [.zshrc](.config/environment/unix/.zshrc) needs to be called exactly that way in `$HOME` to be picked up by the terminal: remove any `alias` or `symlink` added in the name.
 
-> **Warning**<br>
+> [!WARNING]  
 > The `Make Alias` command in macOS Finder won't work properly. You should use this service instead to create proper Symlinks: [Symbolic Linker](https://github.com/nickzman/symboliclinker/releases)
 
 
@@ -142,7 +142,7 @@ To access it quickly, we also defined an alias for `houdini` pointing to that sc
 ### <img src="https://cdn.worldvectorlogo.com/logos/maya-2017.svg" alt="Maya" width="20"/> Maya
 
 *WIP*
-> **Note**<br>
+> [!NOTE]  
 > See [Maya file path variables](https://help.autodesk.com/view/MAYAUL/2022/ENU/?guid=GUID-228CCA33-4AFE-4380-8C3D-18D23F7EAC72)
 
 ``` bash
@@ -180,7 +180,7 @@ To access it quickly, we also defined an alias for `houdini` pointing to that sc
 
 Houdini will automatically scan the folder defined by `$HSITE` for any folder being named `houdini<houdini version>/<recognized folder>` such as `otls` or `packages` and load the content of those folders at Houdini startup.
 
-> **Note**<br>
+> [!NOTE]  
 > See [Configuring Houdini](https://www.sidefx.com/docs/houdini/basics/config.html#path)
 
 You can find two package file examples:
@@ -208,7 +208,7 @@ Both taking advantage of the environment variables posteriorly defined.
 
 Nuke will scan the content of the folder defined by `NUKE_PATH`, searching for `init.py` and `menu.py`.
 
-> **Note**<br>
+> [!NOTE]  
 > See [What are the init.py and menu.py files](https://support.foundry.com/hc/en-us/articles/360003811839-Q100490-What-are-the-init-py-and-menu-py-files)
 
 You can find an [init.py](.config/pipeline/nuke/init.py) file example, showing how to load plugins on Nuke startup.
