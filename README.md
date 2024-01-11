@@ -90,6 +90,9 @@ Once the folder structure is created and the `SERVER_ROOT` value has been modifi
 ### Windows
 
 **Windows** supports shell scripting after some [manipulations](https://walterteng.com/using-zsh-on-windows) but it's way easier to "*hard*" write the environment variables by running [dcc.bat](.config/environment/windows/dcc.bat).
+
+![dcc.bat](docs/images/WindowsTerminal_TFypL9uhfG.png)
+
 To check that everything is working:
 - Type <kbd> Win </kbd> + <kbd> I </kbd> to open the Windows Settings
 - Scroll to the bottom of the page and click `About`
