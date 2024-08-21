@@ -1,30 +1,35 @@
-<p align="left">
-  <a href="https://www.python.org">
-  <img src="https://img.shields.io/badge/-Python-FFD43B?style=for-the-badge&logo=python" alt="Python"/></a> 
-  <a href="https://www.qt.io/qt-for-python">
-  <img src="https://img.shields.io/badge/-Shell-313131?style=for-the-badge&logo=powershell" alt="Shell"/></a>
-  <img src="https://img.shields.io/badge/-Batch-313131?style=for-the-badge&logo=powershell" alt="Batchfile"/></a>
-  <img src="https://img.shields.io/badge/-Windows-00A4EF?style=for-the-badge&logo=windows" alt="Compatible with Windows"/></a>
-  <img src="https://img.shields.io/badge/-macOS-000000?style=for-the-badge&logo=apple" alt="Compatible with macOS"/></a>
-  <img src="https://img.shields.io/badge/-Linux-E95420?style=for-the-badge&logo=linux" alt="Compatible with Linux"/></a> 
-</p>
-
-<div id="top"></div>
-<!-- PROJECT LOGO -->
-<br />
 <div align="center">
+
   <a href="https://github.com/healkeiser/cloud_vfx_server">
-    <img src="https://cdn-icons-png.flaticon.com/512/2345/2345350.png" alt="Logo" width="80" >
-  </a>
+    <img src="https://cdn-icons-png.flaticon.com/512/2345/2345350.png" alt="Logo" width="80" ></a>
 
   <h3 align="center">Cloud VFX Server</h3>
 
   <p align="center">
-    VFX Pipeline
-    <br />
-    <br />
-    <br />
+    Setup cloud as a VFX server.
+    <br/><br/>
   </p>
+
+  ##
+
+  <p align="center">
+    <!-- Maintenance status -->
+    <img src="https://img.shields.io/badge/maintenance-as--is-yellow?&label=Maintenance">&nbsp;&nbsp;
+    <!-- <img src="https://img.shields.io/badge/maintenance-deprecated-red.svg?&label=Maintenance"> -->
+    <!-- License -->
+    <!-- <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?&logo=open-source-initiative&logoColor=white" alt="License: MIT"/>&nbsp;&nbsp; -->
+    <!-- PyPI -->
+    <!-- <a href="https://pypi.org/project/cloud_vfx_server">
+      <img src="https://img.shields.io/pypi/v/cloud_vfx_server?&logo=pypi&logoColor=white&label=PyPI" alt="PyPI version"/></a>&nbsp;&nbsp; -->
+    <!-- Last Commit -->
+    <img src="https://img.shields.io/github/last-commit/healkeiser/cloud_vfx_server?logo=github&label=Last%20Commit" alt="Last Commit"/>&nbsp;&nbsp;
+    <!-- Commit Activity -->
+    <a href="https://github.com/healkeiser/cloud_vfx_server/pulse" alt="Activity">
+      <img src="https://img.shields.io/github/commit-activity/m/healkeiser/cloud_vfx_server?&logo=github&label=Commit%20Activity"/></a>&nbsp;&nbsp;
+    <!-- GitHub stars -->
+    <img src="https://img.shields.io/github/stars/healkeiser/cloud_vfx_server" alt="GitHub Stars"/>&nbsp;&nbsp;
+  </p>
+
 </div>
 
 
@@ -60,8 +65,8 @@ We can then start moving files around. The setup only relies on environment vari
  - `CONFIG_ROOT`: The `.config` folder
  - `ENVIRONMENT_ROOT`: the `.config/environment` folder
  - `PIPELINE_ROOT`: the `.config/pipeline` folder
- 
-You can now download the code from this repository and extract its content to your `SERVER_ROOT`. Using `Z:/My Drive` as the mounted Cloud server path, it should look like this: 
+
+You can now download the code from this repository and extract its content to your `SERVER_ROOT`. Using `Z:/My Drive` as the mounted Cloud server path, it should look like this:
 
 ``` bash
 .
@@ -86,7 +91,7 @@ You will need to modify `SERVER_ROOT` in [.zshrc](.config/environment/unix/.zshr
 - In [dcc.bat](.config/environment/windows/dcc.bat): `setx SERVER_ROOT "Path\to\drive\windows"` (Line 9)
 
 Once the folder structure is created and the `SERVER_ROOT` value has been modified, you can now assign the environment variables:
- 
+
 ### Windows
 
 **Windows** supports shell scripting after some [manipulations](https://walterteng.com/using-zsh-on-windows) but it's way easier to "*hard*" write the environment variables by running [dcc.bat](.config/environment/windows/dcc.bat).
@@ -103,15 +108,15 @@ To check that everything is working:
 
 ### Unix
 
-**macOS** and **Linux** are both Unix based OS. 
+**macOS** and **Linux** are both Unix based OS.
 The simplest way is to migrate your shell to `Zsh` using `chsh -s $(which zsh)` in your terminal.
 You can then symlink [.zshrc](.config/environment/unix/.zshrc) in your `$HOME` folder.
 To check that everything is working, restart your terminal and type `echo $SERVER_ROOT`: it should output your mounted Cloud server path.
 
-> [!WARNING]  
+> [!WARNING]
 > [.zshrc](.config/environment/unix/.zshrc) needs to be called exactly that way in `$HOME` to be picked up by the terminal: remove any `alias` or `symlink` added in the name.
 
-> [!WARNING]  
+> [!WARNING]
 > The `Make Alias` command in macOS Finder won't work properly. You should use this service instead to create proper Symlinks: [Symbolic Linker](https://github.com/nickzman/symboliclinker/releases)
 
 
@@ -129,14 +134,14 @@ This setup automatically links the following DCCs, using this folder structure:
             ├── 📁 houdini               ──> Using $HSITE
             ├── 📁 maya                  ──> Using $MAYA_APP_DIR
             ├── 📁 nuke                  ──> Using $NUKE_PATH
-            ├── 📁 other   
-            └── 📁 substance_painter     
+            ├── 📁 other
+            └── 📁 substance_painter
                 └── 📁 python            ──> Using $SUBSTANCE_PAINTER_PLUGINS_PATH
 ```
 
-The DDCs can be launched normally on **Windows** if the [dcc.bat](.config/environment/windows/dcc.bat) file has been used to define the environment variables. 
+The DDCs can be launched normally on **Windows** if the [dcc.bat](.config/environment/windows/dcc.bat) file has been used to define the environment variables.
 
-For **macOS** and **Linux**, you should start them from a terminal, in order to inherit the environment variables defined by [.zshrc](.config/environment/unix/.zshrc). 
+For **macOS** and **Linux**, you should start them from a terminal, in order to inherit the environment variables defined by [.zshrc](.config/environment/unix/.zshrc).
 
 You can find an example script for Houdini just here: [houdini.sh](.config/environment/unix/houdini.sh).
 
@@ -145,7 +150,7 @@ To access it quickly, we also defined an alias for `houdini` pointing to that sc
 ### <img src="https://cdn.worldvectorlogo.com/logos/maya-2017.svg" alt="Maya" width="20"/> Maya
 
 *WIP*
-> [!NOTE]  
+> [!NOTE]
 > See [Maya file path variables](https://help.autodesk.com/view/MAYAUL/2022/ENU/?guid=GUID-228CCA33-4AFE-4380-8C3D-18D23F7EAC72)
 
 ``` bash
@@ -183,7 +188,7 @@ To access it quickly, we also defined an alias for `houdini` pointing to that sc
 
 Houdini will automatically scan the folder defined by `$HSITE` for any folder being named `houdini<houdini version>/<recognized folder>` such as `otls` or `packages` and load the content of those folders at Houdini startup.
 
-> [!NOTE]  
+> [!NOTE]
 > See [Configuring Houdini](https://www.sidefx.com/docs/houdini/basics/config.html#path)
 
 You can find two package file examples:
@@ -211,7 +216,7 @@ Both taking advantage of the environment variables posteriorly defined.
 
 Nuke will scan the content of the folder defined by `NUKE_PATH`, searching for `init.py` and `menu.py`.
 
-> [!NOTE]  
+> [!NOTE]
 > See [What are the init.py and menu.py files](https://support.foundry.com/hc/en-us/articles/360003811839-Q100490-What-are-the-init-py-and-menu-py-files)
 
 You can find an [init.py](.config/pipeline/nuke/init.py) file example, showing how to load plugins on Nuke startup.
@@ -241,15 +246,29 @@ You can find an [init.py](.config/pipeline/nuke/init.py) file example, showing h
 
 Project Link: [Cloud VFX Server](https://github.com/healkeiser/cloud_vfx_server)
 
-<p align='left'>
+<p align='center'>
+  <!-- GitHub profile -->
+  <a href="https://github.com/healkeiser">
+    <img src="https://img.shields.io/badge/healkeiser-181717?logo=github&style=social" alt="GitHub"/></a>&nbsp;&nbsp;
+  <!-- LinkedIn -->
   <a href="https://www.linkedin.com/in/valentin-beaumont">
-  <img src="https://img.shields.io/badge/-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn"/></a> 
+    <img src="https://img.shields.io/badge/Valentin%20Beaumont-0A66C2?logo=linkedin&style=social" alt="LinkedIn"/></a>&nbsp;&nbsp;
+  <!-- Behance -->
   <a href="https://www.behance.net/el1ven">
-  <img src="https://img.shields.io/badge/-Behance-313131?style=for-the-badge&logo=behance" alt="Behance"/></a> 
+    <img src="https://img.shields.io/badge/el1ven-1769FF?logo=behance&style=social" alt="Behance"/></a>&nbsp;&nbsp;
+  <!-- X -->
   <a href="https://twitter.com/valentinbeaumon">
-  <img src="https://img.shields.io/badge/-Twitter-E1E8ED?style=for-the-badge&logo=twitter" alt="Twitter"/></a> 
+    <img src="https://img.shields.io/badge/@valentinbeaumon-1DA1F2?logo=x&style=social" alt="Twitter"/></a>&nbsp;&nbsp;
+  <!-- Instagram -->
   <a href="https://www.instagram.com/val.beaumontart">
-  <img src="https://img.shields.io/badge/-Instagram-85255b?style=for-the-badge&logo=instagram" alt="Instagram"/></a>  
+    <img src="https://img.shields.io/badge/@val.beaumontart-E4405F?logo=instagram&style=social" alt="Instagram"/></a>&nbsp;&nbsp;
+  <!-- Gumroad -->
+  <a href="https://healkeiser.gumroad.com/subscribe">
+    <img src="https://img.shields.io/badge/healkeiser-36a9ae?logo=gumroad&style=social" alt="Gumroad"/></a>&nbsp;&nbsp;
+  <!-- Gmail -->
+  <a href="mailto:valentin.onze@gmail.com">
+    <img src="https://img.shields.io/badge/valentin.onze@gmail.com-D14836?logo=gmail&style=social" alt="Email"/></a>&nbsp;&nbsp;
+  <!-- Buy me a coffee -->
+  <a href="https://www.buymeacoffee.com/healkeiser">
+    <img src="https://img.shields.io/badge/Buy Me A Coffee-FFDD00?&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee"/></a>&nbsp;&nbsp;
 </p>
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/healkeiser)
